@@ -125,30 +125,12 @@
     (filter #(> % 1)
             (vals (reduce #(merge-with + %1 %2) (areas))))))
 
-;;; day4
-
-(def day4-records
-  (clojure.string/split-lines
-    (slurp (io/resource "day4.txt"))))
-
-day4-records
-
 (defn -main
   "I don't do a whole lot ... yet."
   [& _args]
   (println
     "day1"
     (reduce + 0 day1-frequencies-instructions)
-    ;+1, -1 first reaches 0 twice.
-    ;+3, +3, +4, -2, -4 first reaches 10 twice.
-    ;-6, +3, +8, +5, -6 first reaches 5 twice.
-    ;+7, +7, -2, -7, -4 first reaches 14 twice.
-    ;(day1-find-repeating-frequency '(0) '(+1 -1))
-    ;(day1-find-repeating-frequency '(0) '(+3 +3 +4 -2 -4))
-    ;(day1-find-repeating-frequency '(0) '(-6 +3 +8 +5 -6))
-    ;(day1-find-repeating-frequency '(0) '(+7 +7 -2 -7 -4))
-    ;(day1-find-repeating-frequency '(0) '(+1 -2 +3 +1))
-
     ;; commented because it takes some time to compute
     ;(find-repeating-frequency '(0) frequencies-instructions)
 
@@ -158,6 +140,4 @@ day4-records
 
     "day3"
     (day3-count-overlaps)
-    (day3-find-non-overlapping)
-    ))
-
+    (day3-find-non-overlapping)))
